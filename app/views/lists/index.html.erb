@@ -1,0 +1,15 @@
+<h1>All lists</h1>
+
+<div style="display: flex; flex-direction:column;">
+<% @lists.each do |list| %>
+  <div>
+    <%= link_to list_path(list) do %>
+      <%= list.name %>
+    <% end %>
+  </div>
+<% end %>
+</div>
+
+<%= link_to new_list_path do %>
+  <button> Add my list !</button>
+<% end %>

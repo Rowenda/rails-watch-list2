@@ -1,0 +1,16 @@
+<h1><%= @list.name %></h1>
+
+<% unless @list.bookmarks.empty? %>
+  <% @list.bookmarks.each do |bookmark| %>
+    <p><%= bookmark.movie.title %></p>
+    <p><%= bookmark.comment %></p>
+  <% end %>
+<% end %>
+
+<%= link_to new_list_bookmark_path(@list) do %>
+  <button>Ajoutez un film</button>
+<% end %>
+
+<div>
+  <%= link_to "Toutes les listes", lists_path %>
+</div>
