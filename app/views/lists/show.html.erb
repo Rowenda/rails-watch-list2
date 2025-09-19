@@ -2,7 +2,8 @@
 
 <% unless @list.bookmarks.empty? %>
   <% @list.bookmarks.each do |bookmark| %>
-    <p><%= bookmark.movie.title %></p>
+    <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title, style:"border-radius: 25%; height:10em;" %>
+    <h2><p><%= bookmark.movie.title %></p></h2>
     <p><%= bookmark.comment %></p>
   <% end %>
 <% end %>
